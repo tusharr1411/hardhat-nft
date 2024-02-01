@@ -15,7 +15,7 @@ contract BasicNFT is ERC721 {
 
 
     uint256 private s_tokenCounter;
-t
+
     constructor() ERC721("Dinosaur", "DINO"){
         s_tokenCounter = 0;
 
