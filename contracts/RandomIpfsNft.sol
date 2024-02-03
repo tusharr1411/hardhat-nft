@@ -45,7 +45,6 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable{
     uint256 internal immutable i_mintFee;
 
     // events
-
     event NFTRequested(uint256 indexed requestId, address requester);
     event NFTMinted(Breed dinoBreed, address minter);
 
@@ -86,7 +85,14 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable{
         emit NFTMinted(dinoBreed,dinoOwner);
     }
 
+    function withdraw() public onlyOwner{
+        uint256 amount = address(this).balance;
+        (bool success,  ) = payable(msg.sender).call{value: amount}("");
+        if(!success){
+            revert RandomIpfsNft__TransferFailed();
+        }
 
+    }
 
 
 
