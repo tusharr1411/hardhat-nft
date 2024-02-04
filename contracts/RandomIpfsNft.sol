@@ -15,7 +15,7 @@ error RandomIpfsNft__TransferFailed();
 contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable{
     // when we mint an NFT we will trigger chainlink VRF call to get a random number
     // using that number we will get a random NFT 
-    // Pidori, Red, Blue with rarity 
+    // PTERANODON, BLUE CAMPTOSAURUS, RED CAMPTOSAURUS with rarity 
     // user have to pay to mint an NFT 
     // the owner of the contract can withdraw the ETH
 
@@ -23,7 +23,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable{
 
 
     //Type declarations
-    enum Breed{PIDORI,BLUE, RED}
+    enum Breed{PTERANODON,BLUE_CAMPTOSAURUS, RED_CAMPTOSAURUS}
 
     //Chainlink VRF Variables
     VRFCoordinatorV2Interface private immutable i_vrfCoordinator;
