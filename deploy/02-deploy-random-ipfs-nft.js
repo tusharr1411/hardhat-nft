@@ -2,6 +2,7 @@ const { network, ethers } = require("hardhat");
 const { developmentChains,networkConfig,} = require("../helper-hardhat-config");
 const { verify } = require("../utils/verify");
 const { storeImages} = require("../utils/uploadToPinata");
+require("dotenv").config();
 
 
 const imagesLocation = "./images/randomIpfsNFT"
