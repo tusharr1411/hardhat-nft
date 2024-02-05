@@ -52,7 +52,7 @@ contract DynamicSvgNft is ERC721{
     }
 
     function tokenURI(uint256 tokenId) public view override returns (string memory){
-        require(_exists(tokenId), "URI Query for nonexistance token");
+        require(!_exists(tokenId), "URI Query for nonexistance token");
 
 
         //data:image/svg+xml;base64,
