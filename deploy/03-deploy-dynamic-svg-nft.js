@@ -41,11 +41,11 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
 
 
     // verifications
-    if(!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY){
-        log("Verifying on etherscan...");
-        let nftAddress = await dynamicSvgNft.getAddress();
-        await verify(nftAddress, args);
-    } 
+    // if(!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY){
+    //     log("Verifying on etherscan...");
+    //     let nftAddress = await dynamicSvgNft.getAddress();
+    //     await verify(nftAddress, args);
+    // } 
 
 
 };

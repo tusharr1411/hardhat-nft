@@ -28,6 +28,8 @@ module.exports = async function ({ getNamedAccounts }) {
     const mintFee = await randomIpfsNft.getMintFee();
     const randomIpfsNftMintTx = await randomIpfsNft.requestNFT({value: mintFee.toString()});
     const randomIpfsNftMintTxReceipt = await randomIpfsNftMintTx.wait(1);
+    console.log("JJJJJJJJJJJJJJJJJJJJJJJJJJ")
+    console.log(randomIpfsNftMintTxReceipt)
     
     await new Promise(async (resolve, reject) => {
         setTimeout(()=> reject("Timeout: NFTMinted event did not fire"), 300000); // 300 seconds
@@ -46,3 +48,5 @@ module.exports = async function ({ getNamedAccounts }) {
 
 
 };
+
+module.exports.tags = ["all", "mint"]
