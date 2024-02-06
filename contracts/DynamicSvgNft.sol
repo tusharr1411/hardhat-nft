@@ -17,7 +17,7 @@ contract DynamicSvgNft is ERC721{
     uint256 private s_tokenCounter;
     string private i_lowImageURI;
     string private i_highImageURI;
-    string private constant base64EncodedSvgPrefix = "data:image/svg+sml;base64,";
+    string private constant base64EncodedSvgPrefix = "data:image/svg+xml;base64,";
     AggregatorV3Interface internal immutable i_priceFeed;
     mapping(uint256 => int256) public s_tokenIdToHighValue;
 
